@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tweet's Sentiment Analysis</title>
+        <div class="form-top-right">
+            
+            <title>Tweet's Sentiment Analysis</title>
+            
+        </div>
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+        <link rel="stylesheet" href="static/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="static/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="static/css/form-elements.css">
+        <link rel="stylesheet" href="static/css/style.css">
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script type=text/javascript>
+        function cleartweet(){
+            $('textarea[name="txt_tweet"]').val("");
+            $('#answer').empty();
+        }
+            
+        </script>
+
+
+<script type=text/javascript>
+    if()
+        
+    </script>
+        
+
+    </head>
+
+    <body>
+				
+
+        <!-- Top content -->
+        <div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container">
+                    <div class="row">
+                        <form action="{{ url_for('predict')}}"method="post">
+                        
+                        	<div class="form-top">
+                        		<div class="row">
+                                <div class="form-top-right">
+                        			<i class="fa fa-twitter" style="color:#38A1F3;margin-right: 155px;color: #38A1F3;"></i>
+                            </div>
+                        <div class="col-sm-10 col-sm-offset-1 text">
+                            
+                            <h1 style="text-align: center;"><strong><b style="color:#007bff;font-size: 50px">T</b>weet's <b style="color:#007bff;">S</b>entiment<b style="color:#007bff;"> A</b>nalysis <b style="color:#007bff;">S</b>upervised <b style="color:#007bff;">L</b>earning</b></strong></h1>
+                            <div class="description">
+                            	<p style="text-align: center;     color: #38A1F3;     font-size: x-large; ">
+	                            	Everything you need to know!
+                            	</p>
+                            </div>
+                        </div>
+                    </div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-twitter flip_word" style="color:#38A1F3;margin-right: -781px;color: #38A1F3;"></i>
+                                    
+                        		</div>
+                            </div>
+
+                    <div class="col-sm-12  form-box">
+
+                    </div>
+					
+                            <div class="form-bottom">
+			                    
+			                    	<div class="form-group">
+			                    		<label class="sr-only" >Tweet</label>
+                                        <!-- <input style="color:black;" type="text" name="txt_tweet" autocomplete="off" placeholder="Enter Your Tweet" value="{{request.form['txt_tweet']}}" class="form-username form-control" required="required"> -->
+                                        <textarea style="color:black;height: 92px;width: 1106px;" name="txt_tweet" autocomplete="off" placeholder="Enter Your Tweet"  class="form-username form-control" required="required">{{request.form['txt_tweet']}}</textarea>
+                                        
+			                        </div>
+								
+                                    <div class="row  inline">
+                                                 <div class="col-sm-6 " style="margin-left: 35%;">
+                                                   
+                                                    <button data-placement="top" type="submit"   class="btn" style="width: 25%;   margin: 10px; background: #075270;">Send Tweet</button>
+                                                    <button data-placement="top" type="button"   class="btn" style="width: 25%;   margin: 10px; background: #075270; margin-left: 5px;" onclick="cleartweet()">Clear Tweet</button>
+                                                 </div>
+                                    </div>
+
+                                   
+						
+										
+									<div class="form-group" >
+			                    		<p id="answer" class="form-username form-control" style="background-color:#eee;opacity: 1;width: 362px;margin-left: 375px;text-align: center;font-size: 20px;    padding-bottom: 35px !important;">
+                                        <b>{{ prediction_text }}</b>
+                                        </p>
+			                        	
+                                        
+			                        </div>
+
+                                    
+
+
+
+
+
+
+			                    
+		                    </div>
+                       
+						</form>					   
+
+                    </div>
+
+
+
+
+
+				
+
+                </div>
+            </div>
+            
+        </div>
+
+
+
+
+
+
+    </body>
+
+</html>
